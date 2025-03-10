@@ -1,0 +1,220 @@
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 147px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    @media @bw768 {
+        height: 70px;
+      }
+
+    @media @bw1660 {
+        height: 111px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: fade(@light_gray, 98%);
+    
+        @supports (backdrop-filter: blur(20px)) {
+          background-color: fade(@light_gray, 70%);
+          backdrop-filter: blur(20px);
+        }
+    }
+    &_container {
+        .container;
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+    }
+    &_logo {
+        position: relative;
+        flex-shrink: 0;
+        width: 202px;
+        height: 147px;
+        font-size: 0;
+        text-decoration: none;
+        z-index: 1;
+        @media @bw1660 {
+            width: 152px;
+            height: 111px;
+        }
+        @media @bw768 {
+            width: 96px;
+            height: 70px;
+        }
+    }
+    &_logo-icon {
+        width: 100%;
+        height: 100%;
+    }
+    &_nav {
+        box-sizing: border-box;
+        display: flex;
+        align-items: baseline;
+        margin: 0 auto;
+        @media @bw1020 {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 211px 30px 30px;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            height: 100vh;
+            background-color: fade(@light_gray, 98%);
+            transform: translateX(-100%);
+            transform: translateX(0);
+            transition: transform 0.4s;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+    &_nav-link,
+    &_nav-user-link,
+    &_nav-logout {
+        color: @black;
+        text-decoration: none;
+        &:active {
+            color: @red;
+        }
+        &:hover {
+            color: @red;
+        }
+    }
+
+    &_nav-link {
+        margin: 0 25px;
+        color: @black;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.3;
+        text-decoration: none;
+        transition: color 0.2s;
+        @media @bw1020 {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 5px 0;
+            font-size: 16px;
+        }
+    }
+    &_nav-user-link {
+        display: none;
+        margin-right: 25px;
+        font-weight: 400;
+        font-style: 16px;
+        line-height: 1.3;
+        @media @bw1020 {
+            display: flex;
+        }
+    }
+
+    &_user-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 15px 40px;
+        background-color: transparent;
+        text-decoration: none;
+        border: 1px solid @black;
+        border-radius: 0;
+        outline: none;
+        font-weight: 600;
+        line-height: 1.3;
+        font-size: 16px;
+        color: @black;
+        transition: background-color 0.2s, color 0.2s;
+                    
+        @media @bw1020 {
+          display: flex;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border: none;
+          background: none;
+          color: @black;
+          font-size: 0;
+        }
+        &:hover {
+          background-color: @black;
+          color: @white;
+          @media @bw1020 {
+            background-color: transparent;
+          }
+        }
+    }
+
+    &_user-icon {
+        display: none;
+        @media @bw1020 {
+            display: block;
+        }
+    }
+
+    &_right-block {
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+        width: 202px;
+
+        @media @bw1660 {
+            width: 152px;
+        }
+
+        @media @bw1020 {
+            width: auto;
+            margin-left: auto;
+        }
+    }
+    &_nav-toggle {
+        display: none;
+
+        @media @bw1020 {
+            display: block;
+            position: relative;
+            right: -11px;
+            margin-left: 18px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+        }
+        @media @bw768 {
+            margin-left: 5px;
+        }
+        &::before,
+        &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 19px;
+        left: 11px;
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: @black;
+        transform-origin: 50% 50%;
+        }
+        &::before {
+        top: 13px;
+        box-shadow: 0 6px 0 @black;
+        }
+        &::after {
+        top: 25px;
+        }
+    }
+}
+

@@ -1,0 +1,45 @@
+.radio {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    &_item {
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      min-height: 23px;
+      padding-left: 23px;
+      color: @black;
+      cursor: pointer;
+    }
+    &_input {
+        .is-hidden();
+        &:checked {
+            & ~ .radio_marker {
+                background-color: @black;
+            }
+        }
+    }
+    &_marker {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 23px;
+        height: 23px;
+        border: 2px solid @black;
+        border-radius: 50%;
+        padding: 3px;
+        background-clip: content-box;
+        background-color: transparent;
+        transition: background-color 0.2s;
+    }
+    &_label {
+        margin-left: 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.3;
+    }
+}

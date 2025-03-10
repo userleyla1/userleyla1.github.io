@@ -1,0 +1,29 @@
+.reserve {
+    display: grid;
+    grid-template-columns: 405px 1fr;
+    gap: 65px 11%;
+    width: 100%;
+    grid-template-areas:
+    "checkbox scheme"
+    "order legend";
+}
+
+.reserve_checkbox {
+    grid-area: "checkbox";
+    background-color: red;
+}
+
+.reserve_scheme {
+    grid-area: "scheme";
+    background-color: aqua;
+}
+
+.reserve_order {
+    grid-area: "order";
+    background-color: aquamarine;
+}
+
+.reserve_legend {
+    grid-area: "legend";
+    background-color: plum;
+}
